@@ -44,7 +44,7 @@ namespace labs_07_methods
 
         static (int x, string y, bool z) TupleMethod()
         {
-            return (10, "hi", false)
+            return (10, "hi", false);
         }
     }
     class Mammal

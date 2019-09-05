@@ -10,6 +10,9 @@ namespace Exercise03
     {
         static void Main(string[] args)
         {
+            int[] num = new int[8];
+
+
         }
     }
 }
