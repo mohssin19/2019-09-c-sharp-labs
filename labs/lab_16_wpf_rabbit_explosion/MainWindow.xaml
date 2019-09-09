@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:lab_16_wpf_rabbit_explosion"
         mc:Ignorable="d"
         Title="MainWindow" Height="Auto" Width="Auto" FontSize="30" FontFamily="Arial">
-    <Grid Background="#E86DA6">
+    <Grid x:Name="gridLink" Background="#E86DA6">
 
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="168*"/>
+            <RowDefinition Height="169*"/>
+            <RowDefinition Height="169*"/>
+            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,10 +21,11 @@
             <ColumnDefinition Width="*"/>
 
         </Grid.ColumnDefinitions>
-        <Button x:Name="Button01" Background="#B878FF" Click="Button01_Click" />
-        <Label x:Name="Label01" Content="Label01" Grid.Column="1" HorizontalAlignment="Center" Margin="78.4,68,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="85.4,36.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" RenderTransformOrigin="2.558,-0.885" Grid.Column="1"/>
-        <Image x:Name="rabbitImage" Margin="49.2,47.2,101.6,88.6" Source="Transparent-White-Bunny-Rabbit-PNG.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1">
+        <Button x:Name="Button01" Background="#B878FF" Click="Button01_Click" Grid.ColumnSpan="2" Margin="0,0,254,0" />
+        <Label x:Name="Label01" Content="Label01" Grid.Column="1" HorizontalAlignment="Center" Margin="108.4,66,30,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="85.4,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" RenderTransformOrigin="2.558,-0.885" Grid.Column="1"/>
+        <Image x:Name="rabbitImage" Margin="25.4,5,37,18.8" Source="Transparent-White-Bunny-Rabbit-PNG.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.Row="1">
+
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,6 +35,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Canvas Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="543" Margin="106,66,-96.4,-103.4" Grid.RowSpan="4" VerticalAlignment="Top" Width="752"/>
 
     </Grid>
 

@@ -30,6 +30,7 @@ namespace lab_16_wpf_rabbit_explosion
         {
             InitializeComponent();
             Initialise();
+            createRabbit();
         }
         void Initialise()
         {
@@ -69,18 +70,6 @@ namespace lab_16_wpf_rabbit_explosion
 
 
 
-            byte[] imageInfo = File.ReadAllBytes("Transparent-White-Bunny-Rabbit-PNG.png");
-
-            BitmapImage image;
-
-            using (MemoryStream imageStream = new MemoryStream(imageInfo))
-            {
-                image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.StreamSource = imageStream;
-                image.EndInit();
-            }
 
             // random colour generator
             Label01.Background = new SolidColorBrush(Color.FromRgb((byte)x, (byte)y, (byte)z));
@@ -94,9 +83,23 @@ namespace lab_16_wpf_rabbit_explosion
                 rabbitImage.Visibility = Visibility.Visible;
             }
 
-            
 
+        }
 
+        public void createRabbit()
+        {
+            Random r = new Random();
+            Image BodyImage = new Image
+            {
+                Width = r.Next(50, 200),
+                Height = r.Next(50, 200),
+                Name = "myRabbit",
+                Source = new BitmapImage(new Uri(@"C:\Users\Mohssin Abihilal\Desktop\Transparent-White-Bunny-Rabbit-PNG.png", UriKind.RelativeOrAbsolute)),
+            };
+
+            gridLink.Children.Add(BodyImage);
+            Grid.SetColumn(BodyImage, (2));
+            Grid.SetRow(BodyImage, (2));
         }
     }
     

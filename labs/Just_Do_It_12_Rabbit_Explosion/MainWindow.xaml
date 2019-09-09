@@ -1,0 +1,41 @@
+﻿<Window x:Class="Just_Do_It_12_Rabbit_Explosion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Just_Do_It_12_Rabbit_Explosion"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:RabbitDbDataSet x:Key="rabbitDbDataSet"/>
+        <CollectionViewSource x:Key="rabbitsViewSource" Source="{Binding Rabbits, Source={StaticResource rabbitDbDataSet}}"/>
+    </Window.Resources>
+    <Grid x:Name="gridLink" Background="#E86DA6" DataContext="{StaticResource rabbitsViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="132*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="txtName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="226.2,26.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBox x:Name="txtAge" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="124.2,27.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.317,1.786" Grid.Row="1"/>
+        <Button Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="124.2,3,0,0" VerticalAlignment="Top" Width="105" Grid.Row="2" Height="19" Click="Button_Click"/>
+        <Label Content="Enter Name:" Grid.Column="1" HorizontalAlignment="Left" Margin="226.2,0.4,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="120" Grid.Row="1"/>
+        <Label Content="Enter Age:" Grid.Column="2" HorizontalAlignment="Left" Height="27" Margin="124.2,0.4,0,0" VerticalAlignment="Top" Grid.Row="1" Width="120"/>
+        <Image x:Name="bugsImage" Margin="49,-23,212.8,67.2" Source="bugsBunny.png" Stretch="Fill" RenderTransformOrigin="0.471,0.164" Grid.RowSpan="5" Grid.ColumnSpan="2" Visibility="Hidden" />
+        <DataGrid x:Name="bindingSource1" AutoGenerateColumns="True" Grid.Column="2" HorizontalAlignment="Left" Height="172" Margin="417.2,6,-288.4,0" Grid.Row="3" Grid.RowSpan="2" VerticalAlignment="Top" Width="Auto" ItemsSource="{Binding}"/>
+        <Button Content="Load Table" Grid.Column="2" HorizontalAlignment="Left" Margin="154.2,60.2,0,0" Grid.Row="4" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <ListBox x:Name="listBox1" Grid.Column="1" HorizontalAlignment="Left" Height="226" Margin="95.2,10,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="87" SelectionChanged="ListBox1_SelectionChanged"/>
+        <ListBox x:Name="listBox2" Grid.Column="1" HorizontalAlignment="Left" Height="226" Margin="187.2,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="82" Grid.RowSpan="3" RenderTransformOrigin="0.452,0.501" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="listBox3" Grid.Column="2" HorizontalAlignment="Left" Height="226" Margin="10.2,10,0,0" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="82"/>
+        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="100" Margin="604.2,61.4,-475.4,-7" VerticalAlignment="Top" Width="Auto" Grid.Row="4" ItemsSource="{Binding Mode=OneWay}" Grid.Column="2" Grid.RowSpan="2"/>
+
+    </Grid>
+</Window>
