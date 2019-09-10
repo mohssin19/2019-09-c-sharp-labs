@@ -47,7 +47,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_Do_It_12_Rabbit_Explos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_18_rabbit_database_crud", "lab_18_rabbit_database_crud\lab_18_rabbit_database_crud.csproj", "{CD46AD48-B308-4FE6-BA94-E4EE68AD1779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_19_Struct", "lab_19_Struct\lab_19_Struct.csproj", "{717AA900-9F23-4FBA-A60C-179654F53287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab_19_Struct", "lab_19_Struct\lab_19_Struct.csproj", "{717AA900-9F23-4FBA-A60C-179654F53287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_20_arrays", "lab_20_arrays\lab_20_arrays.csproj", "{78ED7DF7-CC81-420E-8D51-5FEADCCCB709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_21_collections", "lab_21_collections\lab_21_collections.csproj", "{BF7D8742-0613-4C25-9F81-3F2BE69788CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_22_Northwind", "lab_22_Northwind\lab_22_Northwind.csproj", "{BAF74449-5F1D-44B5-918B-9D21D953EE46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +153,18 @@ Global
 		{717AA900-9F23-4FBA-A60C-179654F53287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{717AA900-9F23-4FBA-A60C-179654F53287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{717AA900-9F23-4FBA-A60C-179654F53287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78ED7DF7-CC81-420E-8D51-5FEADCCCB709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78ED7DF7-CC81-420E-8D51-5FEADCCCB709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78ED7DF7-CC81-420E-8D51-5FEADCCCB709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78ED7DF7-CC81-420E-8D51-5FEADCCCB709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF7D8742-0613-4C25-9F81-3F2BE69788CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7D8742-0613-4C25-9F81-3F2BE69788CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7D8742-0613-4C25-9F81-3F2BE69788CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7D8742-0613-4C25-9F81-3F2BE69788CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF74449-5F1D-44B5-918B-9D21D953EE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF74449-5F1D-44B5-918B-9D21D953EE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF74449-5F1D-44B5-918B-9D21D953EE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF74449-5F1D-44B5-918B-9D21D953EE46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
