@@ -78,7 +78,9 @@ namespace lab_18_rabbit_database_crud
                 AgeBoxName.Text = "";
                 TextBoxName.IsReadOnly = false;
                 AgeBoxName.IsReadOnly = false;
-
+                ButtonEdit.IsEnabled = false;
+                ButtonDelete.IsEnabled = false;
+                //ButtonAdd.IsEnabled = false;
             }
             else
             {
@@ -114,6 +116,7 @@ namespace lab_18_rabbit_database_crud
                             }
                         }
                     }
+                    ButtonAdd.IsEnabled = true;
                 }
             }
         }
@@ -171,7 +174,31 @@ namespace lab_18_rabbit_database_crud
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
+            if (ButtonDelete.Content.Equals("Delete"))
+            {
+                ButtonDelete.Content = "Confirm Delete";
+            }
+            else
+            {
+                //delete record
+                //find record in database which matches selected rabbit
+                if (rabbit != null)
+                {
+                    using (var db = new RabbitDbEntities())
+                    {
+                        var rabbitToDelete = db.Rabbits.Find(rabbit.RabbitID);
+                        db.Rabbits.Remove(rabbitToDelete);
+                        db.SaveChanges();
 
+                        rabbits = db.Rabbits.ToList();
+
+                        ListBoxRabbits.ItemsSource = rabbits;
+                    }
+                }
+
+
+                ButtonDelete.Content = "Delete";
+            }
         }
     }
 }

@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Just_Do_It_12_Rabbit_Explos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_18_rabbit_database_crud", "lab_18_rabbit_database_crud\lab_18_rabbit_database_crud.csproj", "{CD46AD48-B308-4FE6-BA94-E4EE68AD1779}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_19_Struct", "lab_19_Struct\lab_19_Struct.csproj", "{717AA900-9F23-4FBA-A60C-179654F53287}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{CD46AD48-B308-4FE6-BA94-E4EE68AD1779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD46AD48-B308-4FE6-BA94-E4EE68AD1779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD46AD48-B308-4FE6-BA94-E4EE68AD1779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717AA900-9F23-4FBA-A60C-179654F53287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717AA900-9F23-4FBA-A60C-179654F53287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717AA900-9F23-4FBA-A60C-179654F53287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717AA900-9F23-4FBA-A60C-179654F53287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
