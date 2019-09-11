@@ -16,8 +16,16 @@ namespace lab_22_Northwind
                 products = db.Products.ToList();
                 categories = db.Categories.ToList();
             }
-            products.ForEach(p => Console.WriteLine($"{p.CategoryID,-10}{p.QuantityPerUnit,-10} "));
-            products.ForEach(p => Console.WriteLine($"{p.ProductID,-10}{p.ProductName,-10} "));
+            products.ForEach(p => Console.WriteLine($"{p.ProductID,-10}{p.ProductName,-10}{p.CategoryID,-10}" +
+                $"{p.UnitPrice}"));
+
+            products.ForEach(p =>{
+                Console.WriteLine($"{p.ProductID, -10}{p.ProductName,-30}");
+
+
+            });
+
+            //products.ForEach(p => Console.WriteLine($"{p.ProductID,-10}{p.ProductName,-10} "));
             Console.ReadLine();
         }
     }
