@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_23_LINQ", "lab_23_LINQ\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_24_Customers_App", "lab_24_Customers_App\lab_24_Customers_App.csproj", "{66E1C845-2C02-409F-9C3E-440016D3714A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_25_Data_Types", "lab_25_Data_Types\lab_25_Data_Types.csproj", "{EF51BA21-1AE9-4292-9DC7-CC472EDD35C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_26_Exceptions", "lab_26_Exceptions\lab_26_Exceptions.csproj", "{2C42A3C8-C99E-4D64-B6E0-7B8A7CF8AC8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +181,14 @@ Global
 		{66E1C845-2C02-409F-9C3E-440016D3714A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66E1C845-2C02-409F-9C3E-440016D3714A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66E1C845-2C02-409F-9C3E-440016D3714A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF51BA21-1AE9-4292-9DC7-CC472EDD35C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF51BA21-1AE9-4292-9DC7-CC472EDD35C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF51BA21-1AE9-4292-9DC7-CC472EDD35C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF51BA21-1AE9-4292-9DC7-CC472EDD35C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C42A3C8-C99E-4D64-B6E0-7B8A7CF8AC8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C42A3C8-C99E-4D64-B6E0-7B8A7CF8AC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C42A3C8-C99E-4D64-B6E0-7B8A7CF8AC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C42A3C8-C99E-4D64-B6E0-7B8A7CF8AC8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

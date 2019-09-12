@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab_24_Customers_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="Auto" Width="Auto" FontSize="25">
+        Title="MainWindow" Height="Auto" Width="Auto" FontSize="25" >
     <Grid Background="#E7EAEB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,39 +25,75 @@
                 Grid.Column="2"
                Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
-        
+
+
+
+
         <StackPanel x:Name="StackPanel2" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1"
                     Grid.ColumnSpan="3" Background="#E7EAFF">
-            <Label x:Name="StackPanel02Label02" Content="StackPanel02" HorizontalAlignment="Stretch"
+            <Label x:Name="StackPanel02Label02" Content="Orders" HorizontalAlignment="Stretch"
                    HorizontalContentAlignment="Center" Background="#E7EAEB"/>
+            <TextBox x:Name="OrderSearch"
+                     HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" KeyUp="OrderSearch_KeyUp" />
 
-            <Button Content="button" />
-            <Button Content="button" />
-            <Button Content="button" />
-            <Button Content="button" />
-            <ListBox x:Name="ListBoxCustomers2"/>
+            <ListBox x:Name="ListBoxOrders" MouseDoubleClick="ListBoxOrders_MouseDoubleClick_1">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat=" {0,-10} {1,-20}{2,-20}">
+                                    <Binding Path="OrderID"/>
+                                    <Binding Path="CustomerID"/>
+                                    <Binding Path="ShippedDate"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
         <StackPanel x:Name="StackPanel3" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1"
                     Grid.ColumnSpan="3" Background="#E7EAFF">
-            <Label x:Name="StackPanel03Label03" Content="StackPanel03" HorizontalAlignment="Stretch"
+            <Label x:Name="StackPanel03Label03" Content="Order Details" HorizontalAlignment="Stretch"
                    HorizontalContentAlignment="Center" Background="#E7EAEB"/>
 
-            <Button Content="button" />
-            <Button Content="button" />
-            <Button Content="button" />
-            <Button Content="button" />
-            <ListBox x:Name="ListBoxCustomers3"/>
+
+            <ListBox x:Name="ListBoxOrderDetails">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat=" {0,-10} {1,-20} {2,-20} ">
+                                    <Binding Path="OrderID"/>
+                                    <Binding Path="Quantity"/>
+                                    <Binding Path="UnitPrice"/>
+
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+
+
+
         </StackPanel>
         <StackPanel x:Name="StackPanel" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1"
                     Grid.ColumnSpan="3" Background="#E7EAFF">
-            <Label x:Name="StackPanel01Label01" Content="StackPanel01" HorizontalAlignment="Stretch"
+            <Label x:Name="StackPanel01Label01" Content="Customer" HorizontalAlignment="Stretch"
                    HorizontalContentAlignment="Center" Background="#E7EAEB"/>
             <TextBox x:Name="CustomerSearch"
                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" KeyUp="CustomerSearch_KeyUp"/>
+            <Label x:Name="StackPanel01Label02" Content="City" HorizontalAlignment="Stretch"
+                   HorizontalContentAlignment="Center" Background="#E7EAEB"/>
+            <Button x:Name="edit" Content="Edit" Background="DarkSlateBlue" Click="ButtonForward_Click" Margin="0,0,321.8,0"/>
             <TextBox x:Name="CitySearch"
                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" KeyUp="CustomerSearch_KeyUp"/>
-            <ListBox x:Name="ListBoxCustomers">
-            <ListBox.ItemTemplate>
+            <ListBox x:Name="ListBoxCustomers" SelectionChanged="ListBoxCustomers_SelectionChanged" MouseDoubleClick="ListBoxCustomers_MouseDoubleClick"
+                     FontFamily="Courier New">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>
                             <TextBlock.Text>
@@ -70,8 +106,9 @@
                         </TextBlock>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-                </ListBox>
+            </ListBox>
         </StackPanel>
+
         <Button x:Name="ButtonBack" Content="Back" Background="Gray" Grid.Row="4" Grid.Column="0" Click="ButtonBack_Click"/>
         <Button x:Name="ButtonForward" Content="Forward" Background="LightBlue" Grid.Row="4" Grid.Column="4" Click="ButtonForward_Click"/>
     </Grid>

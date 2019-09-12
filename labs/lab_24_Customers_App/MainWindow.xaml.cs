@@ -20,7 +20,14 @@ namespace lab_24_Customers_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Local DB data in a list
         static List<Customer> customers;
+        static List<Order> orders;
+        static List<Order_Detail> orderDetails;
+
+        static Customer selectedCustomer = null;
+        static Order selectedOrder = null;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,8 +43,12 @@ namespace lab_24_Customers_App
             using (var db = new NorthwindEntities())
             {
                 customers = db.Customers.ToList();
+                orders = db.Orders.ToList();
+                orderDetails = db.Order_Details.ToList();
                 ListBoxCustomers.ItemsSource = customers;
-                
+                ListBoxOrders.ItemsSource = orders;
+                ListBoxOrderDetails.ItemsSource = orderDetails;
+
 
             }
         }
@@ -87,7 +98,47 @@ namespace lab_24_Customers_App
 
         private void CustomerSearch_KeyUp(object sender, KeyEventArgs e)
         {
-              ListBoxCustomers.ItemsSource = customers.Where(c => c.ContactName.Contains(CustomerSearch.Text) && (c.City.Contains(CitySearch.Text))).ToList();
+              ListBoxCustomers.ItemsSource = customers.Where(c => c.ContactName.ToLower().Contains(CustomerSearch.Text) && (c.City.ToLower().Contains(CitySearch.Text))).ToList();
+
+        }
+
+        private void ListBoxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListBoxCustomers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            StackPanel.Visibility = Visibility.Collapsed;
+            StackPanel2.Visibility = Visibility.Visible;
+            StackPanel3.Visibility = Visibility.Collapsed;
+
+            selectedCustomer = (Customer)ListBoxCustomers.SelectedItem;
+            ListBoxOrders.ItemsSource = orders.Where
+                //(o => o.OrderID.ToString().Contains(OrderSearch.Text)).ToList();
+                (o => o.CustomerID == selectedCustomer.CustomerID).ToList();
+
+            // customer ID orderID from populated orders list
+        }
+
+        private void OrderSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            ListBoxOrders.ItemsSource = orders.Where(o => o.OrderID.ToString().Contains(OrderSearch.Text)).ToList();
+        }
+
+
+     
+        private void ListBoxOrders_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+            // making panel 3 show
+            StackPanel.Visibility = Visibility.Collapsed;
+            StackPanel2.Visibility = Visibility.Collapsed;
+            StackPanel3.Visibility = Visibility.Visible;
+
+            // Outputting order details info
+            selectedOrder = (Order)ListBoxOrders.SelectedItem;
+            ListBoxOrderDetails.ItemsSource = orderDetails.Where
+                (od => od.OrderID == selectedOrder.OrderID).ToList();
 
         }
     }
