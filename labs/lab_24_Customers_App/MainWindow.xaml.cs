@@ -39,6 +39,7 @@ namespace lab_24_Customers_App
             StackPanel.Visibility = Visibility.Visible;
             StackPanel2.Visibility = Visibility.Hidden;
             StackPanel3.Visibility = Visibility.Hidden;
+            editName.IsEnabled = false;
 
             using (var db = new NorthwindEntities())
             {
@@ -48,6 +49,7 @@ namespace lab_24_Customers_App
                 ListBoxCustomers.ItemsSource = customers;
                 ListBoxOrders.ItemsSource = orders;
                 ListBoxOrderDetails.ItemsSource = orderDetails;
+                listGrid1.ItemsSource = customers;
 
 
             }
@@ -104,7 +106,7 @@ namespace lab_24_Customers_App
 
         private void ListBoxCustomers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void ListBoxCustomers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -140,6 +142,22 @@ namespace lab_24_Customers_App
             ListBoxOrderDetails.ItemsSource = orderDetails.Where
                 (od => od.OrderID == selectedOrder.OrderID).ToList();
 
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            editName.IsEnabled = true;
+            
+        }
+
+        private void ListGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listGrid1.SelectedItem != null)
+            {
+                selectedCustomer = (Customer)listGrid1.SelectedItem;
+                editName.Text = selectedCustomer.CustomerID.ToString() + " " + selectedCustomer.ContactName.ToString() + " " + selectedCustomer.City.ToString();
+
+            }
         }
     }
 }
