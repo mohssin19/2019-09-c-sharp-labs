@@ -30,6 +30,10 @@ namespace project_1000_wpf
         {
             InitializeComponent();
             initialise();
+            
+           
+            Save.IsEnabled = false;
+
             using (var db = new RabbitDbEntities())
             {
                 rabbits = db.Rabbits.ToList();
@@ -65,10 +69,16 @@ namespace project_1000_wpf
 
         private void ListGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selectedRabbit = (Rabbit)listGrid1.SelectedItem;
-            Name.Text = selectedRabbit.RabbitName.ToString();
-            Age.Text = selectedRabbit.Age.ToString();
-            Category.Text = selectedRabbit.CategoryId.ToString();
+            if (listGrid1.SelectedItem != null)
+            {
+
+
+                selectedRabbit = (Rabbit)listGrid1.SelectedItem;
+                Name.Text = selectedRabbit.RabbitName.ToString();
+                Age.Text = selectedRabbit.Age.ToString();
+                Category.Text = selectedRabbit.CategoryId.ToString();
+
+            }
         }
 
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
@@ -78,11 +88,11 @@ namespace project_1000_wpf
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (Save.Content.Equals("Save"))
+            if ((Save.Content.Equals("Save")) && (selectedRabbit != null))
             {
                 using (var db = new RabbitDbEntities())
                 {
-                    var rabbitToUpdate = db.Rabbits.Find(1);
+                    var rabbitToUpdate = db.Rabbits.Find(selectedRabbit.RabbitID);
                     Save.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#D9C216"));
                     Save.Content = "Edit Mode";
                     selectedRabbit = (Rabbit)listGrid1.SelectedItem;
@@ -111,6 +121,11 @@ namespace project_1000_wpf
         private void Category_DataContextChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void RdoButton_Checked(object sender, RoutedEventArgs e)
+        {
+            Save.IsEnabled = true;
         }
     }
 }
