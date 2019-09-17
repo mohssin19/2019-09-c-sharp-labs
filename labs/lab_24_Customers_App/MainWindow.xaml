@@ -88,7 +88,7 @@
                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" KeyUp="CustomerSearch_KeyUp"/>
             <Label x:Name="StackPanel01Label02" Content="City" HorizontalAlignment="Stretch"
                    HorizontalContentAlignment="Center" Background="#E7EAEB"/>
-            <Button x:Name="edit" Content="Edit" Background="DarkSlateBlue" Click="ButtonForward_Click" Margin="0,0,321.8,0"/>
+
             <TextBox x:Name="CitySearch"
                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" KeyUp="CustomerSearch_KeyUp"/>
             <ListBox x:Name="ListBoxCustomers" SelectionChanged="ListBoxCustomers_SelectionChanged" MouseDoubleClick="ListBoxCustomers_MouseDoubleClick"
@@ -108,8 +108,25 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
+        <StackPanel x:Name="StackPanel4" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1"
+                    Grid.ColumnSpan="4" Background="#E7EAFF" Margin="0,0.2,152.6,100.6">
+            <Label x:Name="StackPanel4Label01" Content="Listview in a Gridview" HorizontalAlignment="Stretch"
+                   HorizontalContentAlignment="Center" Background="#E7EAEB"/>
+            <ListView SelectionChanged="ListGrid1_SelectionChanged" HorizontalAlignment="Left" Height="165" Margin="10,0,0,0" Width="437" x:Name="listGrid1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" Width="Auto" DisplayMemberBinding="{Binding CustomerID}" />
+                        <GridViewColumn Header="Name" Width="Auto" DisplayMemberBinding="{Binding ContactName}" />
+                        <GridViewColumn Header="City" Width="Auto" DisplayMemberBinding="{Binding City}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBox x:Name="editName" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="447" />
 
+        </StackPanel>
         <Button x:Name="ButtonBack" Content="Back" Background="Gray" Grid.Row="4" Grid.Column="0" Click="ButtonBack_Click"/>
         <Button x:Name="ButtonForward" Content="Forward" Background="LightBlue" Grid.Row="4" Grid.Column="4" Click="ButtonForward_Click"/>
+        <Button x:Name="editButton" Content="Edit" Background="Gray" Grid.Row="1" Grid.Column="0" Click="EditButton_Click" Margin="10,0.2,10,68.6"/>
+
     </Grid>
 </Window>
