@@ -1,0 +1,36 @@
+﻿----1.1
+--select * from Customers where City = 'Paris' or City = 'London'
+----1.2
+--select * from Products where QuantityPerUnit like '%bottle%'
+----1.3
+--select Suppliers.CompanyName, Suppliers.Country, * from Products 
+--inner join Suppliers on Products.SupplierID = Suppliers.SupplierID
+--where QuantityPerUnit like '%bottle%'
+--1.4
+--select COUNT(Products.ProductID) as 'Count', Categories.CategoryName from Products
+--join Categories on Products.CategoryID = Categories.CategoryID
+--group by Categories.CategoryName
+--1.5
+--Select concat (TitleOfCourtesy, ' ', FirstName, ' ', LastName) as 'Name' , City from Employees
+--where Country = 'UK'
+--1.6
+--select Region.RegionID, SUM(Quantity*UnitPrice*(1-[Order Details].Discount)) from Region
+--inner join Territories on Region.RegionID = Territories.RegionID
+--inner join EmployeeTerritories on Territories.TerritoryID = EmployeeTerritories.TerritoryID
+--inner join Orders on Orders.EmployeeID = EmployeeTerritories.EmployeeID
+--inner join [Order Details] on [Order Details].OrderID = Orders.OrderID
+--group by Region.RegionID
+--having SUM(Quantity*UnitPrice*(1-[Order Details].Discount)) >1000000
+--1.7
+--select * from Orders
+--Where Freight > 100 AND (ShipCountry Like 'USA' OR ShipCountry Like 'UK')
+--1.8
+--select Distinct MAX(Discount), [Order Details].UnitPrice from [Order Details]
+--where [Order Details].Discount > 0
+--1.8.1 select top 1 OrderID,
+--sum(UnitPrice * Quantity * Discount) as 'Discount Given'
+--from [Order Details]
+--Group by OrderID
+--order by sum(UnitPrice * Quantity * Discount) desc
+
+

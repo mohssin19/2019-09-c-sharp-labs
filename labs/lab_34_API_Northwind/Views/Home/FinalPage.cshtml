@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "FinalPage";
+}
+
+<h2>This is YOUR END ==>FinalPage</h2>
+
+<h3 style="text-decoration:underline">This is your @ViewBag.Title</h3>
+
+<h4 style="text-decoration:solid">XTRA data is : @ViewBag.OtherData</h4>
+
+<style>
+    ul#List{
+        background-color:aqua;   
+    }
+    li#li{
+        text-decoration-color:blueviolet;
+    }
+</style>
+
+<ul id="List" style="list-style:square">
+
+    @foreach(var item in ViewBag.MyList)
+    {
+        <li id="li">@item</li>
+    }
+</ul>
+
